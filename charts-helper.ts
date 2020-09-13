@@ -7,10 +7,12 @@ enum SortOrder {
 
 type Platform = 'XBOX' | 'PC' | 'PLAYSTATION';
 
+type Genre = 'RPG' | 'MOBA' | 'Shooter';
+
 type RecordItem = {
     gameTitle: string;
     gamePlatform: Platform;
-    genreName: string;
+    genreName: Genre;
 }
 
 type Game = {
@@ -117,4 +119,26 @@ function getFilteredByPlatform(records: RecordItem[], platform: string) {
     });
 }
 
-//construindo lista para grafico de rosca ----------------------------------------------------
+//construindo lista para grafico de rosca genero do jogo ----------------------------------------------------
+const getGenreGameChartData = (records: RecordItem[]) => {
+    const genres = ['RPG', 'MOBA', 'Shooter'];
+
+    const genreByAmount = records.reduce(computeRecordItem, {});
+
+    const labels = Object.keys(genreByAmount);
+    const series = labels.map(x => genreByAmount[x])
+
+    return {
+        label: labels,
+        series: series
+    }
+}
+
+function computeRecordItem(obj: Object, record: RecordItem) {
+    if(obj[record.genreName] !== undefined) {
+        obj[record.genreName] += 1;
+    } else {
+        obj[record.genreName] = 1;
+    }
+    return obj;
+}
