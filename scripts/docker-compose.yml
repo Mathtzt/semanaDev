@@ -8,8 +8,8 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - /F/Git/semanaDev:/var/lib/postgresql/data
-    working_dir: "/var/lib/postgresql/data"
+      - /F/Git/semanaDev:/var/lib/data
+    working_dir: "/var/lib/data"
     networks:
       - postgres-compose-network
 
