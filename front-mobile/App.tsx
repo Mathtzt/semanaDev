@@ -5,6 +5,7 @@ import { AppLoading } from "expo";
 import {
   useFonts, Play_400Regular, Play_700Bold
 } from "@expo-google-fonts/play";
+import Header from "./src/components/Header";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -16,8 +17,8 @@ export default function App() {
   } else {
     return (
         <View style={styles.container}>
-          <Text>Hello World!!!!!</Text>
           <StatusBar style="auto" />
+          <Header/>
         </View>
     );
   }
@@ -26,8 +27,5 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
