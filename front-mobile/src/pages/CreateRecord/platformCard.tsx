@@ -51,6 +51,6 @@ const styles = StyleSheet.create({
         fontFamily: "Play_700Bold",
         textAlign: 'center'
     },
-});
+})
 
 export default PlatformCard

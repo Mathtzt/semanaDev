@@ -34,7 +34,7 @@ const CreateRecord = () => {
 
     const handleChangePlatform = (selectedPlatform: GamePlatform) => {
         setPlatform(selectedPlatform);
-        const gamesByPlatform = gameList.filter(game => game.platform == selectedPlatform);
+        const gamesByPlatform = gameList.filter(game => game.platform === selectedPlatform);
         setGameListFiltered(gamesByPlatform);
     }
 
@@ -82,18 +82,18 @@ const CreateRecord = () => {
                 <View style={styles.platformContainer}>
                     <PlatformCard platform="PC"
                                   icon="laptop"
-                                  onChange={() => null}
-                                  activePlatform = {handleChangePlatform}
+                                  onChange={handleChangePlatform}
+                                  activePlatform = {platform}
                     />
                     <PlatformCard platform="XBOX"
                                   icon="xbox"
-                                  onChange={() => null}
-                                  activePlatform = {handleChangePlatform}
+                                  onChange={handleChangePlatform}
+                                  activePlatform = {platform}
                     />
                     <PlatformCard platform="PLAYSTATION"
                                   icon="playstation"
-                                  onChange={() => null}
-                                  activePlatform = {handleChangePlatform}
+                                  onChange={handleChangePlatform}
+                                  activePlatform = {platform}
                     />
                 </View>
                 <RNPickerSelect
