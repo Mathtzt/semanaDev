@@ -13,7 +13,7 @@ const placeholder = {
     value: null
 }
 
-const BASE_URL = '192.168.1.168:8080';
+const BASE_URL = 'https://devs-matheus.herokuapp.com';
 
 const mapSelectValues = (games: Game[]) => {
     return games.map(game => ({
